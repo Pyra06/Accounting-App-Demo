@@ -1,0 +1,334 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".DailyTransactionActivity">
+
+    <Spinner
+        android:id="@+id/spnName"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/spn_background"
+        android:popupBackground="#EAF4CA"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <androidx.recyclerview.widget.RecyclerView
+        android:id="@+id/recyclerViewTableMDT"
+        android:layout_width="400dp"
+        android:layout_height="250dp"
+        android:layout_marginTop="1dp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/ll2"
+        app:layout_constraintVertical_bias="0.0">
+
+    </androidx.recyclerview.widget.RecyclerView>
+
+    <LinearLayout
+        android:id="@+id/ll2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="360dp"
+        android:baselineAligned="false"
+        android:orientation="horizontal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.545"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/idTitle"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:background="@drawable/table_title_background"
+            android:gravity="center_vertical"
+            android:text=" TrnsID"
+            android:textColor="@android:color/holo_green_light" />
+
+        <TextView
+            android:id="@+id/dateTitle"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:background="@drawable/table_title_background"
+            android:gravity="center_vertical"
+            android:text=" DATE"
+            android:textColor="@android:color/holo_green_light" />
+
+        <TextView
+            android:id="@+id/typeTitle"
+            android:layout_width="90dp"
+            android:layout_height="50dp"
+            android:background="@drawable/table_title_background"
+            android:gravity="center_vertical"
+            android:text=" TYPE"
+            android:textColor="@android:color/holo_green_light" />
+
+        <TextView
+            android:id="@+id/nameTitle"
+            android:layout_width="170dp"
+            android:layout_height="50dp"
+            android:background="@drawable/table_title_background"
+            android:gravity="center_vertical"
+            android:text=" TRANSACTION_AMOUNT"
+            android:textColor="@android:color/holo_green_light" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutAdd"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="305dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_Save"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/etv_background"
+            android:text="ADD"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btn_Reset"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/etv_background"
+            android:text="RESET"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSelected"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginTop="305dp"
+        android:orientation="horizontal"
+        android:visibility="invisible"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.48"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <Button
+            android:id="@+id/btn_Update"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/etv_background"
+            android:text="UPDATE"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btn_Delete"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="30dp"
+            android:background="@drawable/etv_background"
+            android:text="DELETE"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="18dp" />
+
+        <Button
+            android:id="@+id/btn_Clear"
+            android:layout_width="100dp"
+            android:layout_height="wrap_content"
+            android:background="@drawable/etv_background"
+            android:text="CLEAR"
+            android:textColor="@android:color/holo_green_light"
+            android:textSize="18dp" />
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/txtID"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="60dp"
+        android:background="@drawable/etv_background"
+        android:gravity="center_vertical"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/holo_green_dark"
+        android:textColorHint="@android:color/holo_green_light"
+        android:textSize="15dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/acName"
+        android:layout_width="230dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="60dp"
+        android:layout_marginTop="110dp"
+        android:background="@drawable/spn_background"
+        android:gravity="center_vertical"
+        android:inputType="textPersonName"
+        android:textColor="@android:color/black"
+        android:textColorHint="@android:color/holo_green_light"
+        android:textSize="16dp"
+        android:visibility="invisible"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textId"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="63dp"
+        android:text="ID :"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textName"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="113dp"
+        android:text="A/C :"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textType"
+        android:layout_width="100dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="55dp"
+        android:layout_marginTop="170dp"
+        android:gravity="right"
+        android:text="AMOUNT :"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textType3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="4dp"
+        android:layout_marginTop="220dp"
+        android:gravity="right"
+        android:text="REMARK :"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewMenu"
+        android:layout_width="wrap_content"
+        android:layout_height="38dp"
+        android:layout_marginTop="10dp"
+        android:text="(MAINTAIN DAILY TRANSACTIONS)"
+        android:textColor="#F10F0F"
+        android:textSize="25dp"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etvAmount"
+        android:layout_width="130dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="160dp"
+        android:layout_marginTop="165dp"
+        android:background="@drawable/etv_background"
+        android:inputType="number"
+        android:textColor="@android:color/holo_green_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayout"
+        android:layout_width="270dp"
+        android:layout_height="80dp"
+        android:layout_marginStart="108dp"
+        android:layout_marginTop="220dp"
+        android:background="@android:color/darker_gray"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <EditText
+            android:id="@+id/etvRemark"
+            android:layout_width="270dp"
+            android:layout_height="wrap_content"
+            android:background="@android:color/darker_gray"
+            android:gravity="start"
+            android:inputType="textMultiLine"
+            android:lines="4"
+            android:textColor="@android:color/black"
+            android:textSize="20dp" />
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/btn_New"
+        android:layout_width="50dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="304dp"
+        android:layout_marginTop="130dp"
+        android:background="@drawable/etv_background"
+        android:text="+"
+        android:textColor="@android:color/holo_green_light"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <EditText
+        android:id="@+id/etvDate"
+        android:layout_width="125dp"
+        android:layout_height="45dp"
+        android:layout_marginStart="244dp"
+        android:layout_marginTop="54dp"
+        android:gravity="center"
+        android:hint="DD/MM/YYYY"
+        android:textColor="@android:color/black"
+        android:textSize="18dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textId2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="184dp"
+        android:layout_marginTop="62dp"
+        android:text="DATE :"
+        android:textColor="@android:color/holo_green_dark"
+        android:textSize="20dp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <Button
+        android:id="@+id/btn_Calender"
+        android:layout_width="25dp"
+        android:layout_height="25dp"
+        android:layout_marginStart="372dp"
+        android:layout_marginTop="66dp"
+        android:background="@drawable/calendar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
